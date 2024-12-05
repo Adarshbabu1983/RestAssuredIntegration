@@ -1,4 +1,4 @@
-name: TestNG Tests
+name: TestNG Tests0512
 
 on:
   push:
