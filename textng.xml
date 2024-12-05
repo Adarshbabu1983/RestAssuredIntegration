@@ -1,0 +1,8 @@
+<suite name="TestSuite">
+    <test name="TestName">
+        <classes>
+            <!-- Replace with the fully qualified name of your test classes -->
+            <class name="com.example.ApiTest" />
+        </classes>
+    </test>
+</suite>
