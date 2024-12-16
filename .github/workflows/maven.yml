@@ -27,19 +27,19 @@ jobs:
           java-version: '17'
 
       - name: Set Up Database Credentials
-          env:
-            DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
-            DB_USERNAME: ${{ secrets.DB_USERNAME }}
-            DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-            DB_NAME: ${{ secrets.DB_NAME }}
-            DB_PORT: ${{ secrets.DB_PORT }}
+        env:
+          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_PORT: ${{ secrets.DB_PORT }}
 
-          run:
-            echo "DB_HOSTNAME=$DB_HOSTNAME"
-            echo "DB_USERNAME=$DB_USERNAME"
-            echo "DB_PASSWORD=******" # Masking password
-            echo "DB_NAME=$DB_NAME"
-            echo "DB_PORT=$DB_PORT"
+        run:
+          echo "DB_HOSTNAME=$DB_HOSTNAME"
+          echo "DB_USERNAME=$DB_USERNAME"
+          echo "DB_PASSWORD=******" # Masking password
+          echo "DB_NAME=$DB_NAME"
+          echo "DB_PORT=$DB_PORT"
       - name: Install Maven dependencies
         run: mvn install
       - name: Run tests
