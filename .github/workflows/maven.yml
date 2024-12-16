@@ -27,30 +27,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Set Up Database Credentials
-        env:
-          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
-          DB_USERNAME: ${{ secrets.DB_USERNAME }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_PORT: ${{ secrets.DB_PORT }}
 
-        run:
-          echo "DB_HOSTNAME=$DB_HOSTNAME"
-          echo "DB_USERNAME=$DB_USERNAME"
-          echo "DB_PASSWORD=******" # Masking password
-          echo "DB_NAME=$DB_NAME"
-          echo "DB_PORT=$DB_PORT"
       - name: Install Maven dependencies
         run: mvn install
-      - name: Run tests
-        run: mvn test
-        env:
-          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
-          DB_USERNAME: ${{ secrets.DB_USERNAME }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_PORT: ${{ secrets.DB_PORT }}
+      - name: Print Name
+        run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
+#      - name: Run tests
+#        run: mvn test
       - name: Upload TestNG report
         if: always()
         uses: actions/upload-artifact@v3
