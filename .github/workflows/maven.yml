@@ -25,7 +25,6 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
-
       - name: Set Up Database Credentials
         env:
           DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
