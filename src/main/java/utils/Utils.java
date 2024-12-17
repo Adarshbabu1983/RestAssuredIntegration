@@ -25,11 +25,11 @@ public class Utils {
 //            String password = props.getProperty("db.password");
 //            String dbname = props.getProperty("db.dbname");
 //            String port = props.getProperty("db.port");
-//            System.out.println("hostname Connection String: " + hostname);
-//            System.out.println("username Connection String: " + username);
-//            System.out.println("password Connection String: " + password);
-//            System.out.println("dbname Connection String: " + dbname);
-//            System.out.println("port Connection String: " + port);
+            System.out.println("hostname Connection String: " + hostname);
+            System.out.println("username Connection String: " + username);
+            System.out.println("password Connection String: " + password);
+            System.out.println("dbname Connection String: " + dbname);
+            System.out.println("port Connection String: " + port);
             // Build the JDBC connection string
             String jdbcUrl = "jdbc:postgresql://" + hostname + ":" + port + "/" + dbname;
             System.out.println("Database Connection String: " + jdbcUrl);
