@@ -2,6 +2,8 @@ package utils;
 
 import java.sql.*;
 import java.util.Properties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Utils {
     private static Connection connection;

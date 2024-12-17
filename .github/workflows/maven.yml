@@ -36,11 +36,11 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
           DB_PORT: ${{ secrets.DB_PORT }}
-        run: mvn test
+        run: mvn -B clean package
       - name: Print Name
         run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
-#      - name: Run tests
-#        run: mvn test
+      - name: Run tests
+        run: mvn test
       - name: Upload TestNG report
         if: always()
         uses: actions/upload-artifact@v3
