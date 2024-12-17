@@ -21,12 +21,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        env:
-          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
-          DB_USERNAME: ${{ secrets.DB_USERNAME }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_PORT: ${{ secrets.DB_PORT }}
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -36,6 +30,12 @@ jobs:
 #      - name: Install Maven dependencies
 #        run: mvn clean compile
       - name: Install Maven dependencies
+        env:
+          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_PORT: ${{ secrets.DB_PORT }}
         run: mvn test
       - name: Print Name
         run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
