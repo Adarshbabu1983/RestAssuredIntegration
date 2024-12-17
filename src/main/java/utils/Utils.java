@@ -13,21 +13,21 @@ public class Utils {
             // Load properties from the configuration file
             props.load(Utils.class.getClassLoader().getResourceAsStream(connectString));
 
-//            String hostname = props.getProperty("DB_HOSTNAME");
-//            String username = props.getProperty("DB_USERNAME");
-//            String password = props.getProperty("DB_PASSWORD");
-//            String dbname = props.getProperty("DB_NAME");
-//            String port = props.getProperty("DB_PORT");
-            String hostname = props.getProperty("db.hostname");
-            String username = props.getProperty("db.username");
-            String password = props.getProperty("db.password");
-            String dbname = props.getProperty("db.dbname");
-            String port = props.getProperty("db.port");
-            System.out.println("hostname Connection String: " + hostname);
-            System.out.println("username Connection String: " + username);
-            System.out.println("password Connection String: " + password);
-            System.out.println("dbname Connection String: " + dbname);
-            System.out.println("port Connection String: " + port);
+            String hostname = props.getProperty("DB_HOSTNAME");
+            String username = props.getProperty("DB_USERNAME");
+            String password = props.getProperty("DB_PASSWORD");
+            String dbname = props.getProperty("DB_NAME");
+            String port = props.getProperty("DB_PORT");
+//            String hostname = props.getProperty("db.hostname");
+//            String username = props.getProperty("db.username");
+//            String password = props.getProperty("db.password");
+//            String dbname = props.getProperty("db.dbname");
+//            String port = props.getProperty("db.port");
+//            System.out.println("hostname Connection String: " + hostname);
+//            System.out.println("username Connection String: " + username);
+//            System.out.println("password Connection String: " + password);
+//            System.out.println("dbname Connection String: " + dbname);
+//            System.out.println("port Connection String: " + port);
             // Build the JDBC connection string
             String jdbcUrl = "jdbc:postgresql://" + hostname + ":" + port + "/" + dbname;
             System.out.println("Database Connection String: " + jdbcUrl);
