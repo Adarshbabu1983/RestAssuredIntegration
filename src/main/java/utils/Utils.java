@@ -10,21 +10,25 @@ public class Utils {
 
     // Load database properties and establish a connection
     public static void connectToDatabase(String connectString) {
-        Properties props = new Properties();
+//        Properties props = new Properties();
         try {
             // Load properties from the configuration file
-            props.load(Utils.class.getClassLoader().getResourceAsStream(connectString));
+//            props.load(Utils.class.getClassLoader().getResourceAsStream(connectString));
 
-            String hostname = props.getProperty("DB_HOSTNAME");
-            String username = props.getProperty("DB_USERNAME");
-            String password = props.getProperty("DB_PASSWORD");
-            String dbname = props.getProperty("DB_NAME");
-            String port = props.getProperty("DB_PORT");
+            String hostname = System.getenv("DB_HOSTNAME");
+            String username = System.getenv("DB_USERNAME");
+            String password = System.getenv("DB_PASSWORD");
+            String dbname = System.getenv("DB_NAME");
+            String port = System.getenv("DB_PORT");
 //            String hostname = props.getProperty("db.hostname");
 //            String username = props.getProperty("db.username");
 //            String password = props.getProperty("db.password");
 //            String dbname = props.getProperty("db.dbname");
 //            String port = props.getProperty("db.port");
+            if (hostname == null || username == null || password == null || dbname == null || port == null) {
+                throw new RuntimeException("Environment variables not set!");
+            }
+
             System.out.println("hostname Connection String: " + hostname);
             System.out.println("username Connection String: " + username);
             System.out.println("password Connection String: " + password);
