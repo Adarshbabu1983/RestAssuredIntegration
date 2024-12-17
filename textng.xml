@@ -2,7 +2,7 @@
 <suite name="APITestSuite">
     <test name="APITests">
         <classes>
-            <class name="tests.DatabaseTest"/>
+            <class name="src/test/java/tests/DatabaseTest.java"/>
         </classes>
     </test>
 </suite>
