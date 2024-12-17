@@ -30,7 +30,7 @@ jobs:
       - name: Install Maven dependencies
         run: mvn clean compile
       - name: Install Maven dependencies
-        run: mvn install
+        run: mvn installmv
       - name: Print Name
         run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
       - name: Run tests
