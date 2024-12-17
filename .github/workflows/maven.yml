@@ -27,20 +27,20 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+#      - name: Install Maven dependencies
+#        run: mvn clean compile
       - name: Install Maven dependencies
-        run: mvn clean compile
-      - name: Install Maven dependencies
-        run: mvn test -X
-      - name: Print Name
-        run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
-      - name: Run tests
-        env:
-          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
-          DB_USERNAME: ${{ secrets.DB_USERNAME }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_PORT: ${{ secrets.DB_PORT }}
         run: mvn test
+#      - name: Print Name
+#        run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
+#      - name: Run tests
+#        env:
+#          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
+#          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+#          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+#          DB_NAME: ${{ secrets.DB_NAME }}
+#          DB_PORT: ${{ secrets.DB_PORT }}
+#        run: mvn test
 #      - name: Upload TestNG report
 #        if: always()
 #        uses: actions/upload-artifact@v3
