@@ -29,14 +29,14 @@ jobs:
           cache: maven
 #      - name: Install Maven dependencies
 #        run: mvn clean compile
-      - name: Install Maven dependencies
+      - name: Run Test
+        run: mvn test
         env:
           DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
           DB_PORT: ${{ secrets.DB_PORT }}
-        run: mvn -B clean package
       - name: Print Name
         run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
       - name: Run tests
@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: testng-report
-          path: target/extent-reports/
+          path: target/ExtentReports/
 
 
 
