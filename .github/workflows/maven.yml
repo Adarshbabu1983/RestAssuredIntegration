@@ -31,8 +31,8 @@ jobs:
 #        run: mvn clean compile
       - name: Install Maven dependencies
         run: mvn test
-#      - name: Print Name
-#        run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
+      - name: Print Name
+        run: echo "My key is ${{ secrets.DB_HOSTNAME }}"
 #      - name: Run tests
 #        env:
 #          DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}
