@@ -38,7 +38,7 @@ public class DatabaseTest extends BaseTest {
 
     @AfterClass
     public void tearDown() throws Exception {
-        testLogger.info("Closing database connection...");
+        testLogger.info("Closing database connection....");
         Utils.closeConnection();
     }
 }
